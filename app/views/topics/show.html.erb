@@ -1,0 +1,15 @@
+<div class="flex">
+	<nav class="topics_header">
+		<h2><%= @topic.title %></h2>
+		<p><%= @topic.subtitle %></p>
+	</nav>
+
+	<div class="controls">
+		<%= link_to "Edit Topic", edit_topic_path( @topic.id ) %>
+		<%= link_to "Delete Topic", topic_path( @topic.id ), :method => 'delete' %>
+	</div>
+</div>
+
+<% @posts.each do |post| %>
+<p><%= link_to post.post_title, "/topics/#{params[:id]}/posts/#{post.id}" %></p>
+<% end %>

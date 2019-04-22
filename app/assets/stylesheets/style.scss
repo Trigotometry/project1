@@ -1,0 +1,36 @@
+html {
+	height: 100%;
+	margin: 0;
+}
+
+body {
+	height: 100%;
+	margin: 0;
+	background-color: #FAE8EB;
+}
+
+.container {
+	box-sizing: border-box;
+	max-width: 960px;
+	margin: 0 auto;
+	background-color: #F4C8D0;
+	padding: 2rem;
+}
+
+.flex {
+	display: flex;
+	justify-content: flex-start;
+}
+
+.topics_header {
+	width: 50%;
+
+	h2 {
+		margin: 0;
+	}
+}
+
+.controls {
+	width: 50%;
+	text-align: right;
+}

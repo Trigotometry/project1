@@ -1,0 +1,7 @@
+<h2>All the posts.</h2>
+
+<%= @initial_post %>
+
+<% @responses.each do |response| %>
+	<p><%= response.content %></p>
+<% end %>

@@ -1,0 +1,6 @@
+<h1>Forum Build v1.0</h1>
+
+<% @topics.each do |topic| %>
+<h5><%= link_to topic.title, topic_path( topic.id ) %></h5>
+<h6><%= topic.subtitle %></h6>
+<% end %>
