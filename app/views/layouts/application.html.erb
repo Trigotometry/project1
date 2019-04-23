@@ -13,7 +13,11 @@
 		<div class="container">
 			<nav>
 				<%= link_to "Topics", topics_path %>
-				<%= link_to "New Topic", new_topic_path %>
+				<% if @current_user.present? %>
+					<% if @current_user.admin? %>
+						<%= link_to "New Topic", new_topic_path %>
+					<% end %>
+				<% end %>
 				|
 				<% if @current_user.present? %>
 					<% if @current_user.admin? %>

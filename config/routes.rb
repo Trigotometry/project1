@@ -13,6 +13,9 @@
 #            PATCH  /topics/:id(.:format)                 topics#update
 #            PUT    /topics/:id(.:format)                 topics#update
 #            DELETE /topics/:id(.:format)                 topics#destroy
+#      login GET    /login(.:format)                      session#new
+#            POST   /login(.:format)                      session#create
+#            DELETE /login(.:format)                      session#destroy
 
 Rails.application.routes.draw do
 
