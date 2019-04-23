@@ -3,5 +3,6 @@
 <%= @initial_post %>
 
 <% @responses.each do |response| %>
+	<p><strong><%= response.user.username %></strong></p>
 	<p><%= response.content %></p>
 <% end %>

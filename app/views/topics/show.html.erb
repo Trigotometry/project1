@@ -11,5 +11,6 @@
 </div>
 
 <% @posts.each do |post| %>
-<p><%= link_to post.post_title, "/topics/#{params[:id]}/posts/#{post.id}" %></p>
+<p><%# link_to post.post_title, "/topics/#{params[:id]}/posts/#{post.id}" %></p>
+<p><%= link_to post.post_title, topic_post_path( post.topic.id, post.id ) %></p>
 <% end %>
