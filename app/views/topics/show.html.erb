@@ -15,7 +15,7 @@
 </div>
 
 <% if @current_user.present? %>
-	<div class="controls">
+	<div class="new-post">
 		<%= link_to "New Post", new_topic_post_path( @topic.id ) %>
 	</div>
 <% end %>

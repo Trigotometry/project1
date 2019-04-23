@@ -3,6 +3,12 @@ class PostsController < ApplicationController
 	def index
 	end
 
+	def show
+		@topic = Topic.find params[:topic_id]
+		@initial_post = @topic.posts.find params[:id]
+		@responses = @initial_post.responses
+	end
+
 	def new
 		@topic = Topic.find params[:topic_id]
 		@post = Post.new
@@ -10,14 +16,16 @@ class PostsController < ApplicationController
 
 	def create
 		post = Post.create post_params
-		redirect_to
+		topic = Topic.find params[:topic_id]
+		@current_user.posts << post
+		topic.posts << post
+		redirect_to topic_post_path( params[:topic_id], post.id )
 	end
 
-	def show
-		@topic = Topic.find params[:topic_id]
-		initial_post = @topic.posts.find params[:id]
-		@initial_post = initial_post.initial_content
-		@responses = initial_post.responses
+	def edit
+	end
+
+	def update
 	end
 
 	private
