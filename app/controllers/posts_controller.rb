@@ -1,8 +1,5 @@
 class PostsController < ApplicationController
 
-	def index
-	end
-
 	def show
 		@topic = Topic.find params[:topic_id]
 		@initial_post = @topic.posts.find params[:id]
@@ -23,9 +20,17 @@ class PostsController < ApplicationController
 	end
 
 	def edit
+		@topic = Topic.find params[:topic_id]
+		@post = Post.find params[:id]
 	end
 
 	def update
+		post = Post.find params[:id]
+		post.update post_params
+		redirect_to topic_post_path( params[:topic_id], params[:id])
+	end
+
+	def destroy
 	end
 
 	private
