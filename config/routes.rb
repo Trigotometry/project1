@@ -20,9 +20,9 @@
 Rails.application.routes.draw do
 
 	root :to => 'topics#index'
-	resources :users, :only => [:new, :create]
+	resources :users, :only => [:index, :new, :create, :update]
 	resources :topics  do
-		resources :posts, :only => [:show]
+		resources :posts, :only => [:index, :new, :show, :create]
 	end
 
 	get '/login' => 'session#new'

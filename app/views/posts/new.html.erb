@@ -1,0 +1,15 @@
+<h1>New post in
+	<em><%= @topic.title %></em>
+	topic.</h1>
+
+<%= form_for [@topic, @post] do |f|%>
+<div>
+	<%= f.label :post_title %>
+	<%= f.text_field :post_title %>
+</div>
+<div>
+	<%= f.label :initial_content %>
+	<%= f.text_area :initial_content %>
+</div>
+<%= f.submit %>
+<% end %>

@@ -3,14 +3,23 @@
 		<h2><%= @topic.title %></h2>
 		<p><%= @topic.subtitle %></p>
 	</nav>
-
-	<div class="controls">
-		<%= link_to "Edit Topic", edit_topic_path( @topic.id ) %>
-		<%= link_to "Delete Topic", topic_path( @topic.id ), :method => 'delete' %>
-	</div>
+	<% if @current_user.present? %>
+		<% if @current_user.admin? %>
+			<div class="controls">
+				<%= link_to "Edit Topic", edit_topic_path( @topic.id ) %>
+				|
+				<%= link_to "Delete Topic", topic_path( @topic.id ), :method => 'delete' %>
+			</div>
+		<% end %>
+	<% end %>
 </div>
 
+<% if @current_user.present? %>
+	<div class="controls">
+		<%= link_to "New Post", new_topic_post_path( @topic.id ) %>
+	</div>
+<% end %>
+
 <% @posts.each do |post| %>
-<p><%# link_to post.post_title, "/topics/#{params[:id]}/posts/#{post.id}" %></p>
-<p><%= link_to post.post_title, topic_post_path( post.topic.id, post.id ) %></p>
+	<p><%= link_to post.post_title, topic_post_path( post.topic.id, post.id ) %></p>
 <% end %>

@@ -1,4 +1,12 @@
 <h1>All Users</h1>
+
 <% @users.each do |user| %>
-  <p><%= user.email %></p>
+
+	<p><%= user.email %></p>
+
+	<%= form_for user do |f| %>
+		<%= f.label :admin %>
+		<%= f.check_box :admin, :data => {:url => user_path( user ), :remote => true, :method => :patch} %>
+	<% end %>
+
 <% end %>
