@@ -4,8 +4,7 @@ class PostsController < ApplicationController
 	def show
 		@topic = Topic.find params[:topic_id]
 		@initial_post = @topic.posts.find params[:id]
-		@responses = @initial_post.responses
-		@response = Response.new
+		@responses = @initial_post.responses.sort
 	end
 
 	def new

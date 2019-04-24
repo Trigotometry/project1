@@ -26,13 +26,20 @@
 			<% end %>
 		<% end %>
 
-		<%= render :partial => 'response' %>
+		<%= form_for response do |f| %>
+			<%= f.text_area :content %>
+			<%= f.submit %>
+		<% end %>
 	</div>
 <% end %>
 
 <% if @current_user.present? %>
 	<div class="create-response">
 		<p><a href="#" class="toggle-create">Create Response</a></p>
-		<%= render :partial => 'response' %>
+		<%= form_for Response.new do |f| %>
+		<%= hidden_field_tag :post_id, params[:id] %>
+			<%= f.text_area :content %>
+			<%= f.submit %>
+		<% end %>
 	</div>
 <% end %>
