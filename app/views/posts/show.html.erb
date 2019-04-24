@@ -2,18 +2,37 @@
 	<h2><%= @initial_post.post_title %></h2>
 </div>
 
-<p>
-	<strong><%= @initial_post.user.username %></strong>
-	fires it off with;</p>
+<p><strong><%= @initial_post.user.email %></strong> gets the ball rolling with;</p>
 <%= @initial_post.initial_content %>
 
-<% @responses.each do |response| %>
-	<p><strong><%= response.user.username %></strong> replies;</p>
-	<p><%= response.content %></p>
-<% end %>
-
 <div class="post-controls">
-	<% if @current_user.id == @initial_post.user.id %>
-		<%= link_to "Edit Your Post", edit_topic_post_path( params[:topic_id], @initial_post.id) %>
+	<% if @current_user.present? %>
+		<% if @current_user.id == @initial_post.user.id %>
+			<%= link_to "Edit Your Post", edit_topic_post_path( params[:topic_id], @initial_post.id ) %>
+		<% end %>
 	<% end %>
 </div>
+
+<% @responses.each do |response| %>
+	<div class="response">
+		<p><strong><%= response.user.email %></strong> replies;</p>
+		<p><%= response.content %></p>
+
+		<% if @current_user.present? %>
+			<% if @current_user.id == response.user_id %>
+				<div class="post-controls">
+					<p><a href="#" class="toggle-edit">Edit response</a></p>
+				</div>
+			<% end %>
+		<% end %>
+
+		<%= render :partial => 'response' %>
+	</div>
+<% end %>
+
+<% if @current_user.present? %>
+	<div class="create-response">
+		<p><a href="#" class="toggle-create">Create Response</a></p>
+		<%= render :partial => 'response' %>
+	</div>
+<% end %>

@@ -11,4 +11,5 @@
 
 class Topic < ApplicationRecord
 	has_many :posts
+	has_many :responses, :through => :posts
 end

@@ -1,9 +1,11 @@
 class PostsController < ApplicationController
+	  before_action :check_for_post_owner, :only => [:edit, :update, :destroy]
 
 	def show
 		@topic = Topic.find params[:topic_id]
 		@initial_post = @topic.posts.find params[:id]
 		@responses = @initial_post.responses
+		@response = Response.new
 	end
 
 	def new
@@ -20,8 +22,6 @@ class PostsController < ApplicationController
 	end
 
 	def edit
-		@topic = Topic.find params[:topic_id]
-		@post = Post.find params[:id]
 	end
 
 	def update
@@ -36,6 +36,13 @@ class PostsController < ApplicationController
 	private
 	def post_params
 		params.require(:post).permit(:post_title, :initial_content)
+	end
+
+	private
+	def check_for_post_owner
+		@topic = Topic.find params[:topic_id]
+		@post = @topic.posts.find params[:id]
+		redirect_to topic_post_path unless @current_user.id == @post.user.id
 	end
 
 end

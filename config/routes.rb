@@ -20,6 +20,8 @@
 #                 PATCH  /topics/:id(.:format)                      topics#update
 #                 PUT    /topics/:id(.:format)                      topics#update
 #                 DELETE /topics/:id(.:format)                      topics#destroy
+#        response PATCH  /responses/:id(.:format)                   responses#update
+#                 PUT    /responses/:id(.:format)                   responses#update
 #           login GET    /login(.:format)                           session#new
 #                 POST   /login(.:format)                           session#create
 #                 DELETE /login(.:format)                           session#destroy
@@ -31,6 +33,7 @@ Rails.application.routes.draw do
 	resources :topics  do
 		resources :posts, :only => [:new, :create, :show, :edit, :update]
 	end
+	resources :responses, :only => [:create, :update]
 
 	get '/login' => 'session#new'
 	post '/login' => 'session#create'
