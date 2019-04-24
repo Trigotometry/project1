@@ -24,11 +24,12 @@ before_action :check_for_admin, :only => [:index]
 
 	  if user.admin?
 		  admin_status = nil
-	  elsif user.admin == false
+	  else
 		  admin_status = true
 	  end
 	  # binding.pry
 	  user.update :admin => admin_status
+	  redirect_to users_path
   end
 
   private
