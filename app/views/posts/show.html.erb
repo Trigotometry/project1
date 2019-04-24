@@ -21,7 +21,8 @@
 		<% if @current_user.present? %>
 			<% if @current_user.id == response.user_id %>
 				<div class="post-controls">
-					<p><a href="#" class="toggle-edit">Edit response</a></p>
+					<p><a href="#" class="toggle-edit">Edit Response</a></p>
+					<%= link_to "Delete Response", response_path( response.id ), :method => 'delete' %>
 				</div>
 			<% end %>
 		<% end %>

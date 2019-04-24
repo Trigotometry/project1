@@ -20,6 +20,15 @@ before_action :check_for_admin, :only => [:index]
   end
 
   def update
+	  user = User.find params[:id]
+
+	  if user.admin?
+		  admin_status = nil
+	  elsif user.admin == false
+		  admin_status = true
+	  end
+	  # binding.pry
+	  user.update :admin => admin_status
   end
 
   private

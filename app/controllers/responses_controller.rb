@@ -23,6 +23,16 @@ class ResponsesController < ApplicationController
 		redirect_to topic_post_path( topic, post )
 	end
 
+	def destroy
+		response = Response.find params[:id]
+
+		post = response.post.id
+		topic = response.post.topic.id
+
+		response.destroy
+		redirect_to topic_post_path( topic, post )
+	end
+
 	private
 	def response_params
 		params.require(:response).permit(:content)

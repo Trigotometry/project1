@@ -5,8 +5,8 @@
 	<p><%= user.email %></p>
 
 	<%= form_for user do |f| %>
-		<%= f.label :admin %>
-		<%= f.check_box :admin, :data => {:url => user_path( user ), :remote => true, :method => :patch} %>
+		<%= f.label :admin, "Admin:" %>
+		<%= f.check_box :admin, :data => { :url => user_path( user ), :remote => true, :method => :patch } %>
 	<% end %>
 
 <% end %>
