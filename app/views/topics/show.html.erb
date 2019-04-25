@@ -1,8 +1,8 @@
 <div class="flex">
-	<nav class="topics_header">
+	<div class="topics_header">
 		<h2><%= @topic.title %></h2>
 		<p><%= @topic.subtitle %></p>
-	</nav>
+	</div>
 	<% if @current_user.present? %>
 		<% if @current_user.admin? %>
 			<div class="controls">

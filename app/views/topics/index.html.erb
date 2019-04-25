@@ -1,6 +1,10 @@
-<h1>Forum Build v1.0</h1>
+<h2 class="mb-4 text-white">Welcome to <strong>The Basicest Forum</strong></h2>
 
 <% @topics.each do |topic| %>
-<h5><%= link_to topic.title, topic_path( topic.id ) %></h5>
-<h6><%= topic.subtitle %></h6>
+<div class="card shadow-sm text-white bg-transparent mb-4">
+	<div class="card-body">
+		<h5 class="card-title"><strong><%= link_to topic.title, topic_path( topic.id ), :class => 'text-white' %></strong></h5>
+		<h6 class="card-subtitle"><%= topic.subtitle %></h6>
+	</div>
+</div>
 <% end %>

@@ -30,9 +30,8 @@
 
 Rails.application.routes.draw do
 
-	# root :to => 'topics#index'
+	root :to => 'topics#index'
 	resources :users, :only => [:index, :new, :create, :update]
-	# patch '/users' => 'users#update'
 	resources :topics  do
 		resources :posts, :only => [:new, :create, :show, :edit, :update]
 	end

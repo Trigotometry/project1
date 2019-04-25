@@ -31,9 +31,13 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 # Heroku stuff.
 gem 'rails_12factor', group: :production
-gem 'jquery-rails'
 
+# Cloudinary
 gem 'cloudinary'
+
+# Bootstrap
+gem 'bootstrap'
+gem 'jquery-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
