@@ -6,7 +6,7 @@ class TopicsController < ApplicationController
 
 	def show
 		@topic = Topic.find params[:id]
-		@posts = @topic.posts
+		@posts = @topic.posts.sort_by {|m| m.updated_at}
 	end
 
 	def new

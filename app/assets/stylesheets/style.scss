@@ -17,15 +17,10 @@ body {
 	background-color: #6369D1;
 }
 
-a {
-	text-decoration: none;
-
-}
-
-.flex {
-	display: flex;
-	justify-content: flex-start;
-}
+// .btn-secondary {
+// 	background-color: #6369D1;
+// 	border-color: #2D305F;
+// }
 
 .topics_header {
 	width: 50%;
@@ -33,11 +28,6 @@ a {
 	h2 {
 		margin: 0;
 	}
-}
-
-.controls {
-	width: 50%;
-	text-align: right;
 }
 
 .new-post {
