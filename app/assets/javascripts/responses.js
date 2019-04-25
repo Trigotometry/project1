@@ -7,5 +7,5 @@ $(document).ready(function () {
 	$('.create-response .toggle-create').on('click', function() {
 		$(this).closest('div.create-response').find('form').slideToggle();
 	})
-	
+
 })

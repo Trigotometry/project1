@@ -3,7 +3,7 @@
 <% @topics.each do |topic| %>
 <div class="card shadow-sm text-white bg-transparent mb-4">
 	 <%= link_to topic_path( topic.id ) do %>
-		<div class="card-body text-white">
+		<div class="card-body cb-h text-white">
 			<h5 class="card-title"><strong><%= topic.title %></strong></h5>
 			<h6 class="card-subtitle"><%= topic.subtitle %></h6>
 		</div>

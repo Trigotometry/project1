@@ -35,7 +35,7 @@
 		<div class="col">
 			<%= link_to topic_post_path( post.topic.id, post.id ) do %>
 				<div class="card shadow-sm text-white bg-transparent mb-4">
-					<div class="card-body">
+					<div class="card-body cb-h">
 						<h5><%= post.post_title %></h5>
 						<p class="mb-0"><em><%= post.initial_content.truncate(256) %></em></p>
 					</div>
