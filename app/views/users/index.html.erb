@@ -1,12 +1,13 @@
-<h1>All Users</h1>
+<h1 class="text-white"><strong>All Users</strong></h1>
 
 <% @users.each do |user| %>
 
-	<p><%= user.email %></p>
+	<div class="mb-3">
+	<p class="mb-0"><%= user.email %></p>
 
-	<%= form_for user do |f| %>
-		<%= f.label :admin, "Admin:" %>
+	<%= bootstrap_form_for user, :html => { :class => 'text-white' } do |f| %>
 		<%= f.check_box :admin, :data => { :url => user_path( user ), :remote => true, :method => :patch } %>
 	<% end %>
+	</div>
 
 <% end %>

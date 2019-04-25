@@ -13,7 +13,7 @@
 				</div>
 				<div class="row">
 					<div class="col">
-						<%= link_to "Delete Topic", topic_path( @topic.id ), :method => 'delete', :class => 'col btn btn-outline-dark btn-block text-white' %>
+						<%= link_to "Delete Topic", topic_path( @topic.id ), :method => 'delete', :class => 'btn btn-outline-dark btn-block text-white' %>
 					</div>
 				</div>
 			<% end %>
@@ -37,7 +37,7 @@
 				<div class="card shadow-sm text-white bg-transparent mb-4">
 					<div class="card-body">
 						<h5><%= post.post_title %></h5>
-						<p><em><%= post.initial_content.truncate(256) %></em></p>
+						<p class="mb-0"><em><%= post.initial_content.truncate(256) %></em></p>
 					</div>
 				</div>
 			<% end %>
