@@ -13,13 +13,13 @@
 			<div class="card-body">
 				<p class="card-text"><%= @initial_post.initial_content %></p>
 			</div>
+	<% if @current_user.present? %>
+		<% if @current_user.id == @initial_post.user.id %>
 			<div class="card-footer text-right">
-				<% if @current_user.present? %>
-					<% if @current_user.id == @initial_post.user.id %>
-						<%= link_to "Edit Post", edit_topic_post_path( params[:topic_id], @initial_post.id ), :class => 'btn btn-outline-warning btn-sm' %>
-					<% end %>
-				<% end %>
+				<%= link_to "Edit Post", edit_topic_post_path( params[:topic_id], @initial_post.id ), :class => 'btn btn-outline-warning btn-sm' %>
 			</div>
+		<% end %>
+	<% end %>
 		</div>
 	</div>
 </div>
