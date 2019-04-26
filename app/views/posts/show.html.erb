@@ -37,12 +37,12 @@
 					</div>
 
 					<% if @current_user.present? %>
-						<div class="card-footer text-right">
-							<% if @current_user.id == response.user_id %>
+						<% if @current_user.id == response.user_id %>
+							<div class="card-footer text-right">
 								<a href="#" class="toggle-edit btn btn-outline-warning btn-sm">Edit Response</a>
 								<%= link_to "Delete Response", response_path( response.id ), :method => 'delete', :class => 'btn btn-outline-danger btn-sm' %>
-							<% end %>
-						</div>
+							</div>
+						<% end %>
 					<% end %>
 				</div>
 
