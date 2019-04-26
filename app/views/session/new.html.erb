@@ -1,13 +1,26 @@
-<h1>Sign In</h1>
+<div class="card text-center">
+	<div class="card-header">
+		<% if flash[:error].nil? %>
+			<h2 class="mb-0"><strong>Sign In</strong></h2>
+		<% else %>
+			<%= flash[:error] %>
+		<% end %>
+	</div>
 
-<%= flash[:error] %>
+	<div class="card-body">
+	<%= form_tag login_path do %>
+	  <%= label_tag :email %>
+	  <br>
+	  <%= email_field_tag :email, nil, :class => 'form-control' %>
+	<div class="mb-3"></div>
+	  <%= label_tag :password %>
+	  <br>
+	  <%= password_field_tag :password, nil, :class => 'form-control'  %>
+	<div class="mb-3"></div>
+	</div>
 
-<%= form_tag login_path do %>
-  <%= label_tag :email %>
-  <%= email_field_tag :email %>
-
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
-
-  <%= submit_tag "Sign in" %>
-<% end %>
+	<div class="card-footer">
+	  <%= button_tag 'Sign In', type: "submit", class: "btn btn-success btn-lg" %>
+  </div>
+	<% end %>
+</div>
