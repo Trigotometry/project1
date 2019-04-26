@@ -12,4 +12,8 @@ This was immensely difficult but a fantastically rewarding process (even though 
 You can find my functioning *basic forum* here;
 https://hexton-project-1.herokuapp.com/
 
-![Trigotometry's Basic Forum Homepage]
+![Trigotometry's Basic Forum Homepage](https://github.com/Trigotometry/project1/blob/master/a%20basic%20forum.png?raw=true)
+
+#### **Potential Updates & Additions.**
+
+**Thank you to both Joel and Yianni for fielding questions.**
