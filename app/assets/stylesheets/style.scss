@@ -26,6 +26,10 @@ body {
 	background-color: #2d305f;
 }
 
+.card > a:hover {
+	text-decoration: none;
+}
+
 div.response form {
 	display: none;
 }

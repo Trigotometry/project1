@@ -1,6 +1,7 @@
 # == Route Map
 #
 #          Prefix Verb   URI Pattern                                Controller#Action
+#            root GET    /                                          topics#index
 #           users GET    /users(.:format)                           users#index
 #                 POST   /users(.:format)                           users#create
 #        new_user GET    /users/new(.:format)                       users#new

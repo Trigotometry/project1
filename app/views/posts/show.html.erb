@@ -36,14 +36,14 @@
 						<p class="mb-0"><%= response.content %></p>
 					</div>
 
-					<div class="card-footer text-right">
-						<% if @current_user.present? %>
+					<% if @current_user.present? %>
+						<div class="card-footer text-right">
 							<% if @current_user.id == response.user_id %>
 								<a href="#" class="toggle-edit btn btn-outline-warning btn-sm">Edit Response</a>
 								<%= link_to "Delete Response", response_path( response.id ), :method => 'delete', :class => 'btn btn-outline-danger btn-sm' %>
 							<% end %>
-						<% end %>
-					</div>
+						</div>
+					<% end %>
 				</div>
 
 				<%= bootstrap_form_for response do |f| %>

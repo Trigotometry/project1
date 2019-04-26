@@ -21,26 +21,27 @@
 	</div>
 </div>
 
-<div class="row mb-4 ">
-	<div class="col"></div>
-	<div class="col-4">
-		<% if @current_user.present? %>
-			<%= link_to "New Post", new_topic_post_path( @topic.id ), :class => 'btn btn-outline-dark btn-block text-white' %>
-		<% end %>
+<% if @current_user.present? %>
+	<div class="row mb-4 ">
+		<div class="col"></div>
+		<div class="col-sm-6 col-4">
+				<%= link_to "New Post", new_topic_post_path( @topic.id ), :class => 'btn btn-outline-dark btn-block text-white' %>
+		</div>
 	</div>
-</div>
+<% end %>
+
 
 <% @posts.each do |post| %>
 	<div class="row">
 		<div class="col">
-			<%= link_to topic_post_path( post.topic.id, post.id ) do %>
-				<div class="card shadow-sm text-white bg-transparent mb-4">
-					<div class="card-body cb-h">
-						<h5><%= post.post_title %></h5>
+			<div class="card shadow-sm bg-transparent mb-4">
+				<%= link_to topic_post_path( post.topic.id, post.id ) do %>
+					<div class="card-body cb-h text-white">
+						<h5><strong><%= post.post_title %></strong></h5>
 						<p class="mb-0"><em><%= post.initial_content.truncate(256) %></em></p>
 					</div>
-				</div>
-			<% end %>
+				<% end %>
+			</div>
 		</div>
 	</div>
 <% end %>
