@@ -1,24 +1,7 @@
-# README
+### **A Basic Forum.**
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### General Assembly — SEI-31
 
-Things you may want to cover:
+An open brief gave me the opportunity to attempt to recreate a web app. I chose to try and deliver a very basic forum system.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+... to be continued.
