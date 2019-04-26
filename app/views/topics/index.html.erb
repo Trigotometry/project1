@@ -1,12 +1,12 @@
-<h2 class="mb-4 text-white">Welcome to <strong>The Basicest Forum</strong></h2>
+<h2 class="mb-4 text-white">Welcome to <strong>A Basic Forum</strong></h2>
 
 <% @topics.each do |topic| %>
-<div class="card shadow-sm text-white bg-transparent mb-4">
-	 <%= link_to topic_path( topic.id ) do %>
-		<div class="card-body cb-h text-white">
-			<h5 class="card-title"><strong><%= topic.title %></strong></h5>
-			<h6 class="card-subtitle"><%= topic.subtitle %></h6>
-		</div>
-	<% end %>
-</div>
+	<div class="card shadow-sm text-white bg-transparent mb-4">
+		 <%= link_to topic_path( topic.id ) do %>
+			<div class="card-body cb-h text-white">
+				<h5 class="card-title"><strong><%= topic.title %></strong></h5>
+				<h6 class="card-subtitle"><%= topic.subtitle %></h6>
+			</div>
+		<% end %>
+	</div>
 <% end %>
